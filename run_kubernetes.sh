@@ -9,10 +9,9 @@ dockerpath="savangwd9/udacityproj"
 
 # Step 2
 # Run the Docker Hub container with kubernetes
-kubectl run udacityproj\
-    --generator=run-pod/v1\
-    --image=$dockerpath\
+kubectl run udacityproj --image=$dockerpath\
     --port=80 --labels app=udacityproj
+    
 kubectl get deployments
 
 # Step 3:
