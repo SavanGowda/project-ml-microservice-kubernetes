@@ -1,42 +1,50 @@
 [![CircleCI](https://circleci.com/gh/SavanGowda/project-ml-microservice-kubernetes.svg?style=svg)](https://circleci.com/gh/SavanGowda/project-ml-microservice-kubernetes)
 
-## Project Overview
+## Project Summary
 
-In this project, you will apply the skills you have acquired in this course to operationalize a Machine Learning Microservice API. 
+This project is from the module Microservices at Scale using AWS & Kubernetes (Udacity Cloud DevOps Nanodegree Program)
 
-You are given a pre-trained, `sklearn` model that has been trained to predict housing prices in Boston according to several features, such as average rooms in a home and data about highway access, teacher-to-pupil ratios, and so on. You can read more about the data, which was initially taken from Kaggle, on [the data source site](https://www.kaggle.com/c/boston-housing). This project tests your ability to operationalize a Python flask app—in a provided file, `app.py`—that serves out predictions (inference) about housing prices through API calls. This project could be extended to any pre-trained machine learning model, such as those for image recognition and data labeling.
+In this project a pre-trained, `sklearn` model that has been trained to predict housing prices in Boston according to several features, such as average rooms in a home and data about highway access, teacher-to-pupil ratios, and so on is used. This project contains a Python flask app file, `app.py`—that serves out predictions (inference) about housing prices through API calls. This project could be extended to any pre-trained machine learning model, such as those for image recognition and data labeling. The data used in this project is taken from Kaggle, on [the data source site](https://www.kaggle.com/c/boston-housing).
 
-### Project Tasks
+### Project Goal
 
-Your project goal is to operationalize this working, machine learning microservice using [kubernetes](https://kubernetes.io/), which is an open-source system for automating the management of containerized applications. In this project you will:
-* Test your project code using linting
-* Complete a Dockerfile to containerize this application
-* Deploy your containerized application using Docker and make a prediction
-* Improve the log statements in the source code for this application
-* Configure Kubernetes and create a Kubernetes cluster
-* Deploy a container using Kubernetes and make a prediction
-* Upload a complete Github repo with CircleCI to indicate that your code has been tested
+The project goal is to operationalize this working, machine learning microservice using [kubernetes](https://kubernetes.io/), which is an open-source system for automating the management of containerized applications.
 
-You can find a detailed [project rubric, here](https://review.udacity.com/#!/rubrics/2576/view).
-
-**The final implementation of the project will showcase your abilities to operationalize production microservices.**
+#### The following are the completed Project tasks --
+- [x] Test your project code using linting
+- [x] Complete a Dockerfile to containerize this application
+- [x] Deploy your containerized application using Docker and make a prediction
+- [x] Improve the log statements in the source code for this application
+- [x] Configure Kubernetes and create a Kubernetes cluster
+- [x] Deploy a container using Kubernetes and make a prediction
+- [x] Upload a complete Github repo with CircleCI to indicate that your code has been tested
 
 ---
+## Steps to run the Project
+### Setup the Environment
 
-## Setup the Environment
+#### Create a virtualenv and activate it
 
-* Create a virtualenv and activate it
+1. `python3 -m ~/<name-of-the-env>`
+2. `source ~/<name-of-the-env>/bin/activate`
+
+#### Running the Makefile
 * Run `make install` to install the necessary dependencies
+* Run `make lint` to lint the Dockerfile and the python files
+* Run `make validate-circleci` to validate the CircleCI's `config.yml`
+* Run `make run-circleci-local` to execute circleci locally through cli
 
-### Running `app.py`
+#### Running `app.py`
 
 1. Standalone:  `python app.py`
 2. Run in Docker:  `./run_docker.sh`
 3. Run in Kubernetes:  `./run_kubernetes.sh`
 
-### Kubernetes Steps
+#### Make Predictions
 
-* Setup and Configure Docker locally
-* Setup and Configure Kubernetes locally
-* Create Flask app in Container
-* Run via kubectl
+* Make sure that `app.py` is running either through Standalone or through Docker or through Kubernetes
+* Run the file `make_prediction.sh` to see the results from the `app.py`
+
+# CircleCI
+
+* Click on the CircleCI badge to know the status of the build of this project.
